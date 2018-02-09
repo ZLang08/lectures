@@ -1,9 +1,6 @@
 from turtle import Turtle
 
 
-def regular_polygon(t: Turtle, length: int, num_sides = 4) -> None:
-
-
 def square(t: Turtle, length: int) -> None:
 
     """
@@ -19,6 +16,7 @@ def square(t: Turtle, length: int) -> None:
 
 
 def hexagon(t: Turtle, length: int) -> None:
+
     """
     Draw a hexagon with a given length
     :param t: an instance of a Turtle used to render a square
@@ -32,6 +30,7 @@ def hexagon(t: Turtle, length: int) -> None:
 
 
 def triangle(t: Turtle, length: int) -> None:
+
     """
     Draw a triangle with a given length
     :param t: an instance of a Turtle used to render a triangle
@@ -45,6 +44,7 @@ def triangle(t: Turtle, length: int) -> None:
 
 
 def octagon(t: Turtle, length: int) -> None:
+
     """
     Draw an octagon with a given length
     :param t: an instance of a Turtle used to render a octagon
@@ -55,3 +55,18 @@ def octagon(t: Turtle, length: int) -> None:
     for count in range(8):
         t.forward(length)
         t.left(45)
+
+
+def radial_pattern(t: Turtle, n: int, length: int, shape) -> None:
+
+    """
+    Draws a radial pattern of n shapes with the given length
+    :param t: a Turtle instance
+    :param n: number of shapes
+    :param length: length of a shape side
+    :param shape: a function for drawing some shape
+    :return: None
+    """
+    for count in range(n):
+        shape(t, length)
+        t.left(360/n)
